@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'home.js' %}" type="module"></script>
+{% endblock %}
+
+{% block content %}
+    <button class="enableEthereumButton">Enable Ethereum</button>
+    <p>Account: <span class="showAccount"></span></p>
+{% endblock %}

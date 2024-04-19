@@ -1,0 +1,345 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    background-color: #F3F4F6;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header nav ul {
+    
+    background-color:  #f8f9fa;
+    box-shadow: 0px 0px 0px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+  
+  
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 50px;
+  }
+  .content-room {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .repo {
+    margin-top: 10px;
+    width: 356px;
+    height: 184px;
+    background-color: white;
+    box-shadow: 0px 0px 0px black;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .repo-title {
+    margin-bottom: 10px;
+  }
+  
+  .repo-title h2 {
+    color: #374151;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    word-wrap: break-word;
+  }
+  
+  .repo-description {
+    margin-bottom: 20px;
+  }
+  
+  .repo-description p {
+    color: #4B5563;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+  }
+  
+  .repo-tags {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .repo-tags .tag {
+    padding: 4px 9px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+  }
+  .footer {
+    width: 100%;
+    height: 56px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .footer p {
+    color: #374151;
+    font-size: 16px;
+  }
+  
+  .footer nav {
+    display: flex;
+  }
+  
+  .footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .footer nav li {
+    margin-right: 20px;
+  }
+  
+  .footer nav a {
+    color: #374151;
+    font-size: 16px;
+    text-decoration: none;
+  }  
+
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container label {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .form-container input[type="submit"] {
+    margin-top: 15px;
+    padding: 5px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-container input[type="checkbox"] {
+    vertical-align: top;
+  }
+  .nav-button {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #ff7f7f; /* Light red */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #ff4f4f; /* Darker red on hover */
+  }
+  .main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #F3F4F6;
+  }
+  
+  .room-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .file-section {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+  }
+  
+  .file-section__title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .file-section__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .file-section__item:last-child {
+    border-bottom: none;
+  }
+  
+  .file-section__item-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .file-section__item-name {
+    font-size: 16px;
+    color: #333;
+  }
+  .user-section {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-section__title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .user-section__item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .user-section__item:last-child {
+    border-bottom: none;
+  }
+  
+  .user-section__item-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-color: #ccc; /* Replace with actual icon */
+  }
+  
+  .user-section__item-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-section__item-name {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .user-section__item-account {
+    font-size: 14px;
+    color: #666;
+  }
+  .commit-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .commit-section__title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .commit-section__item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .commit-section__item:last-child {
+    border-bottom: none;
+  }
+  
+  .commit-section__item-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-color: #ccc; /* Replace with actual icon */
+  }
+  
+  .commit-section__item-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .commit-section__item-message {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .commit-section__item-author {
+    font-size: 14px;
+    color: #666;
+  }
