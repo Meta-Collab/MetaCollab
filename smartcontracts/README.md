@@ -12,4 +12,4 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
 
-Sepolia deployment url = https://sepolia.etherscan.io/address/0xc1A2366BBa98709A440118f699EE82574F77a285#code
+Sepolia deployment url = https://sepolia.etherscan.io/address/0xcB2363f3F3C1BFA045fA7834828Aeb1762a7aC1A#code
