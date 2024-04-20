@@ -5,4 +5,4 @@ db.sqlite3
 main/__pycache__/
 metacollab/main/migrations/__pycache__/
 metacollab/metacollab/__pycache__/
-
+metacollab/main/__pycache__/
