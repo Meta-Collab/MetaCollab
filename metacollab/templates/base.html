@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
     {% block script %} {% endblock %}
     <style>
         /* Additional inline styles for animations */
@@ -48,10 +50,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link btn btn-light" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link btn btn-light" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'list_rooms' %}">Rooms</a>
+                            <a class="nav-link btn btn-light" href="{% url 'list_rooms' %}"><i class="fas fa-door-open"></i> Rooms</a>
                         </li>
                     </ul>
                 </div>

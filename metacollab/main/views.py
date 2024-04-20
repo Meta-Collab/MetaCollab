@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import random
 
+#from fl.client import main
 # Create your views here.
 
 @api_view(['GET', 'POST'])
@@ -30,6 +31,9 @@ def get_room(request, roomuuid):
         # return redirect('get_room', roomuuid=room.roomuuid, )
     except:
         print("Error in sending data to Node.js server")
+    if request.method=='POST':
+        federated_learning()
+
     return render(request,"get_room.html",context)
 
 @csrf_exempt
@@ -38,7 +42,8 @@ def api_list_room(request):
     print("Received a request from the Node.js server")
     commits = request.data.get('commits')
     print(commits)
-    return Response('Success!')
+    #return Response('Success!')
+    return render(request,'get_commits.html',{'commmits':commits})
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
@@ -94,3 +99,73 @@ def home(request):
         except json.JSONDecodeError as e:
             print(e)
     return render(request, "home.html")
+
+@api_view(['GET', 'POST'])
+def federated_learning():
+    #file='/files/hello.pkl'
+    #run main in server.py
+    from fl.client import main
+    main(1)
+    file_path='fl/saved_models/mobilenetv2/saved_models.pb'
+    try:
+        url="http://localhost:3000/take_file"
+        response = requests.post(url, json={'file_path': file_path})
+        response.raise_for_status()
+        print("see")
+        
+    except:
+        print("Error in sending data to Node.js server")
+    #save in ipfs
+
+
+def save_ipfs_cid(request):
+    cid = request.data.get('cid')
+    room_id = request.data.get('room_id')
+    room=Room.objects.get(roomuuid=room_id)
+    room.cid=cid
+    room.save()
+    return Response({"message": "Success"}, status=200)
+
+    
+def put_string(complete_string,roomuuid):
+    try:
+        url="http://localhost:3000/put_string"
+        response = requests.post(url, json={'complete_string': complete_string,"roomuuid":roomuuid})
+        response.raise_for_status()
+        print("see")
+        
+    except:
+        print("Error in sending data to Node.js server")
+
+
+def update_model(request,roomuuid):
+    if request.method == 'POST':
+        #get file from blockchain
+        #file=fl/saved_models/mobilenetv2/saved_model.pb
+
+        updated_string=request.GET.get('string')
+        # Write the updated string to the file
+        #put string in gfg.txt path
+        # with open('gfg.txt', 'w') as file:
+        #     file.write(updated_string)
+        from fl.client import main
+        main(1)
+        # #get string from gfg.txt
+        with open('gfg.txt', 'r') as file:
+        # # Read the entire contents of the file into a string
+            complete_string = file.read()
+        put_string(complete_string,roomuuid)
+        #return string and put string in blockchain
+        
+    return render(request, "update_model.html")
+
+def get_commits(request,room_id):
+    try:
+        url="http://localhost:3000/get_commits"
+        response = requests.post(url, json={'room_id': room_id})
+        response.raise_for_status()
+        print("see")
+        
+    except:
+        print("Error in sending data to Node.js server")
+    return render(request,'get_commits.html')

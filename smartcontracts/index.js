@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 const { push, new_room, get_commits }= require('./scripts/interact.js');
+const { main }= require('./scripts/pinata.js');
 
 const API = axios.create({
     baseURL: 'http://localhost:8000',
@@ -35,9 +36,20 @@ app.post('/get_commits', (req, res) => {
         }
     )
 });
+app.post('/take_file)', async (req, res) => {
+    const room_id = req.body.file_path;
+    try {
+        const url = await main(file_path);
+        API.post('/api/get_file_url', { url: url })
+            .then(response => {
+                res.send('Success!');
+            })
+        res.send('Success!');
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
-
-
