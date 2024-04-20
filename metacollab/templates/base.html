@@ -1,0 +1,41 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Add your CSS files here -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% block script %} {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header">
+            <nav>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #f8f9fa;">
+                <a href="#" style="font-size: 24px; color: #333; text-decoration: none;">MetaCollab</a>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex;">
+                    
+                    <li><a href="{% url 'home' %}" class="nav-button">Home</a></li>
+                    <li><a href="{% url 'list_rooms' %}" class="nav-button">Rooms</a></li>
+                    
+                </ul>
+              </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- The content block is where you'll include the content from other templates -->
+        {% endblock %}
+    </main>
+
+    <footer class="footer-bar">
+        <!-- Footer goes here -->
+    </footer>
+
+    <!-- Add your JavaScript files here -->
+</body>
+</html>

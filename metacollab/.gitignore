@@ -1,1 +1,7 @@
 .env
+myvenv/
+db.sqlite3
+main/__pycache__/
+metacollab/main/migrations/__pycache__/
+metacollab/metacollab/__pycache__/
+
