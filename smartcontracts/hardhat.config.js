@@ -11,7 +11,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
 
 module.exports = {
   solidity: "0.8.19",
-  defaultNetwork: "hardhat",
+  defaultNetwork: "sepolia",
   networks: {
     hardhat: {},
     sepolia: {

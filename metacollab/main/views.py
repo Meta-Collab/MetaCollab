@@ -16,7 +16,7 @@ import random
 
 @api_view(['GET', 'POST'])
 #@authenticate_room
-def get_room(request,roomuuid):
+def get_room(request, roomuuid):
     roominfo=Room.objects.get(roomuuid=roomuuid)
     context={
         "room" : roominfo,
@@ -61,7 +61,7 @@ def list_rooms(request):
         room=Room.objects.create(roomuuid=ruuid, name = name, description=description)
         room.save()
         users = request.POST.get('users')
-        user_id=request.session['uid']
+        user_id=request.session['user_id']
         user_id = User.objects.get(id=user_id)
         r = RoomToUser.objects.create(room = room, user = user_id)
         r.save()
