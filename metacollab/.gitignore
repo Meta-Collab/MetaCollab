@@ -1,1 +1,4 @@
 .env
+myvenv
+db.sqlite3
+metacollab/main/__pycache__/
