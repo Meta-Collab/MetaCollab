@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}  
+{% block content %}
+
+<main class="main">
+<section class="room-name">{{ context.roomname }}</section>
+</main>
+<main class="main">
+  
+  <section class="file-section">
+    <h2 class="file-section__title">Files</h2>
+    
+    <div class="file-section__item">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/904147ae3c1642bfa7b80e155d175e1addc821e6c11732e3808b62e3c85adf19?"
+        class="file-section__item-img"
+      />
+      <div class="file-section__item-name">file.pb</div>
+    </div>
+    
+    
+  </section>
+  <section class="user-section">
+    <h2 class="user-section__title">Users</h2>
+    {% for user in context.roomusers %}
+      <div class="user-section__item">
+        <div class="user-section__item-icon"></div>
+        <div class="user-section__item-details">
+          <div class="user-section__item-name">{{ user.username }}</div>
+          <div class="user-section__item-account">MetaMask ID: {{ user.accountNo }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+  
+</main>
+<main>
+  <!-- {% for commit in context.roomcommits %}
+            <div class="commit">
+                <p>{{ commit.message }}</p>
+                <p>Author: {{ commit.author.username }}</p>
+            </div>
+        {% empty %}
+            <p>No commits in this room.</p>
+        {% endfor %} -->
+  <section class="commit-section">
+    <h2 class="commit-section__title">Recent Commits</h2>
+    <div class="commit-section__item">
+      <div class="commit-section__item-icon"></div>
+      <div class="commit-section__item-details">
+        <div class="commit-section__item-message">Commit message goes here</div>
+        <div class="commit-section__item-author">Username - 2 days ago</div>
+      </div>
+    </div>
+  </section>
+</main>
+  
+    {% endblock %}
