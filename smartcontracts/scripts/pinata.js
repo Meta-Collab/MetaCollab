@@ -5,7 +5,7 @@ require('dotenv').config();
 
 key = process.env.PINATA_KEY
 
-async function main(path) {
+async function main(path,room_id) {
   try {
     const formData = new FormData();
 
@@ -35,7 +35,7 @@ async function main(path) {
     const cid = res.data.IpfsHash;
     console.log(cid)
     url = "https://gateway.pinata.cloud/ipfs/" + cid
-    var responseObject = { "url": url ,"cid":cid};
+    var responseObject = { "url": url ,"cid":cid,"roomid":room_id};
     return responseObject
   } catch (error) {
     console.log(error);
