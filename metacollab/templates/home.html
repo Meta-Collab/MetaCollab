@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login and Register
+{% endblock %}
+
+{% block content %}
+<body>
+    <h2>Register</h2>
+    <form method="POST" action="/">
+        {% csrf_token %}
+        <input type="hidden" name="register" value="true">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="metamasks">Metamask:</label><br>
+        <input type="text" id="metamasks" name="metamasks"><br>
+        <input type="submit" value="Register">
+    </form>
+
+    <h2>Login</h2>
+    <form method="POST" action="/">
+        {% csrf_token %}
+        <input type="hidden" name="login" value="true">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="metamasks">Metamask:</label><br>
+        <input type="text" id="metamasks" name="metamasks"><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+{% endblock %}
+    

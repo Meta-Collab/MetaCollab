@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}  
+    {% block content %}
+    <div class="container">
+    <div class="form-container">
+        <form method="POST">
+          {% csrf_token %}
+          <input type="text" id="name" name="name">
+          <input type="text" id="description" name="description">
+          <input type="text" id="users" name="users">
+          <input type="submit" value="submit">
+        </form>
+    </div>
+    <div class="content">
+        {% for room in rooms %}
+            {% if forloop.counter|divisibleby:3 %}
+                <div class="row">
+            {% endif %}
+            <div class="repo">
+                <div class="repo-title">
+                    <h2 style="font-family: 'Courier New', monospace;">
+                        <a href="{% url 'get_room' roomuuid=room.roomuuid %}">{{ room.name }}</a>
+                    </h2>
+                </div>
+                <div class="repo-description">
+                    <p style="font-family: 'Courier New', monospace;">
+                        <a href="{% url 'get_room' roomuuid=room.roomuuid %}">{{ room.roomuuid }}</a>
+                    </p>
+                    <p style="font-family: 'Courier New', monospace;">{{ room.description }}</p>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+    </div>
+    </div>
+            {% endif %}
+        {% endfor %}
+    {% endblock %}
