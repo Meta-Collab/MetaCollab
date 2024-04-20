@@ -34,7 +34,7 @@ async function main(path) {
     console.log(res.data);
     const cid = res.data.IpfsHash;
     console.log(cid)
-    return cid;
+    return "https://gateway.pinata.cloud/ipfs/" + cid;
   } catch (error) {
     console.log(error);
   }
