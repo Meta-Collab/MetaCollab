@@ -5,10 +5,10 @@ class User(models.Model):
     accountNo= models.CharField(max_length=100,unique=True)
     username= models.UUIDField(unique=True)
     def __str__(self):
-        return self.username
+        return str(self.username)
 
 class Room(models.Model):
-    roomuuid= models.UUIDField(unique=True)
+    roomuuid= models.IntegerField(unique=True)
     name=models.CharField(max_length=255)
     description=models.TextField()
     def __str__(self):
@@ -17,5 +17,8 @@ class Room(models.Model):
 class RoomToUser(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+
 
 
