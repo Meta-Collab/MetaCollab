@@ -56,6 +56,8 @@ class CifarClient(fl.client.NumPyClient):
             "val_loss": history.history["val_loss"][0],
             "val_accuracy": history.history["val_accuracy"][0],
         }
+
+        print(type(results))
         return parameters_prime, num_examples_train, results
 
     def evaluate(self, parameters, config):
@@ -70,15 +72,16 @@ class CifarClient(fl.client.NumPyClient):
         num_examples_test = len(self.test_images)
         return loss, num_examples_test, {"accuracy": accuracy}
 
-def main() -> None:
+def main(client_number) -> None:
     # argument to define the client's number
-    client_argumentparser = argparse.ArgumentParser()
-    client_argumentparser.add_argument(
-                                    '--client_number', dest='client_number', type=int, 
-                                    required=True,
-                                    help='Used to load the dataset for the client')
-    client_argumentparser = client_argumentparser.parse_args()
-    client_number = client_argumentparser.client_number
+    # client_argumentparser = argparse.ArgumentParser()
+    # client_argumentparser.add_argument(
+    #                                 '--client_number', dest='client_number', type=int, 
+    #                                 required=True,
+    #                                 help='Used to load the dataset for the client')
+    # client_argumentparser = client_argumentparser.parse_args()
+    # client_number = client_argumentparser.client_number
+    #  = 2
     print("Client %s has been connected!" %client_number)
 
     base_model = tf.keras.applications.MobileNetV2(
