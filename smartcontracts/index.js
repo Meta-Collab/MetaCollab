@@ -37,7 +37,7 @@ app.post('/get_commits', (req, res) => {
     )
 });
 app.post('/take_file)', async (req, res) => {
-    const room_id = req.body.file_path;
+    const file_path = req.body.file_path;
     try {
         const url = await main(file_path);
         API.post('/api/get_file_url', { url: url })
@@ -50,6 +50,26 @@ app.post('/take_file)', async (req, res) => {
     }
 });
 
+app.post('/put_string)', async (req, res) => {
+    const complete_string = req.body.complete_string;
+    const roomuuid=req.body.roomuuid;
+    // try {
+    //     const url = await main(file_path);
+    //     API.post('/api/get_file_url', { url: url })
+    //         .then(response => {
+    //             res.send('Success!');
+    //         })
+    //     res.send('Success!');
+    // } catch (error) {
+    //     console.error(error);
+    // }
+    try {
+        const result = await push(complete_string, roomuuid);
+        res.send('Success!');
+    } catch (error) {
+        console.error(error);
+    }
+});
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
