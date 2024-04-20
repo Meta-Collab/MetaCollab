@@ -79,7 +79,7 @@ def load_dataset():
 
         for folder in os.listdir(path):
             label = class_labels[folder]
-            print(label)
+            # print(label)
 
             for file in os.listdir(os.path.join(path,folder)):
                 img_path = os.path.join(os.path.join(path, folder), file)
@@ -103,12 +103,26 @@ def get_evaluate_fn(model):
     print("[Server] test_images shape:", test_images.shape)
     print("[Server] test_labels shape:", test_labels.shape)
 
+    weights = model.get_weights()
+    print(type(weights))
+
+    with open('gfg.txt', 'w+') as f:
+         for items in weights:
+             f.write('%s\n' %items)
+     
+    print("File written successfully")    
+    # close the file
+    f.close()
+
     def evaluate(
         server_round: int,
         parameters: fl.common.NDArrays,
         config: Dict[str, fl.common.Scalar],
     ) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
         print("======= server round %s/%s evaluate() ===== " %(server_round, federatedLearningcounts))
+
+        print("parameters:\n")
+        print(type(parameters))
 
         model.set_weights(parameters)
         loss, accuracy = model.evaluate(test_images, test_labels, verbose=0)
