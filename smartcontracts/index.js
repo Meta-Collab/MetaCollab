@@ -10,15 +10,21 @@ const API = axios.create({
     baseURL: 'http://localhost:8000',
 });
 
-app.post('/new_room', (req, res) => {
+app.post('/new_room', async (req, res) => {
     const room_id = req.body.room_id;
     const members=req.body.members;
-    new_room(room_id, members);
+    try {
+        const result = await new_room(room_id, members);
+        res.send('Success!');
+    } catch (error) {
+        console.error(error);
+    }
 });
 app.post('/push', (req, res) => {
     const commit = req.body.commit;
     const room_id=req.body.room_id;
     push(commit, room_id);
+    res.send('Success!');
 });
 app.post('/get_commits', (req, res) => {
     const room_id=req.body.room_id;

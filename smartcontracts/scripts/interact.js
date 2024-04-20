@@ -5,9 +5,11 @@ const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS
 
 async function new_room(room_id, members)
 {
+  console.log("hi")
   const storageFactory = await ethers.getContractFactory("Room")
   const contract = await storageFactory.attach(CONTRACT_ADDRESS);
-  await contract.create_room(room_id, members)
+  console.log(await contract.create_room(room_id, members))
+  console.log("h2")
 }
 
 async function push(commit, room_id)
@@ -26,6 +28,7 @@ async function get_commits(room_id)
   return commits
 }
 
+module.exports = { new_room, push, get_commits }
 // async function main() {
 //     const storageFactory = await ethers.getContractFactory("Room")
 //     const contract = await storageFactory.attach(CONTRACT_ADDRESS);
