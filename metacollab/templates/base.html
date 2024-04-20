@@ -1,40 +1,81 @@
-{% load static %} 
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <!-- Add your CSS files here -->
+    <title>{% block title %}MetaCollab{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     {% block script %} {% endblock %}
+    <style>
+        /* Additional inline styles for animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Custom style for Enable Ethereum button */
+        .enable-ethereum-btn {
+            border-radius: 30px; /* Increased border radius for a rounded button */
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .enable-ethereum-btn:hover {
+            background-color: #6c757d; /* Darker background color on hover */
+            border-color: #6c757d; /* Darker border color on hover */
+            color: #fff; /* White text color on hover */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <nav>
-              <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #f8f9fa;">
-                <a href="#" style="font-size: 24px; color: #333; text-decoration: none;">MetaCollab</a>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex;">
-                    
-                    <li><a href="{% url 'home' %}" class="nav-button">Home</a></li>
-                    
-                </ul>
-              </div>
-            </nav>
-        </div>
+    <header class="fade-in">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand btn btn-light" href="#">MetaCollab</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rooms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main>
+    <main class="container">
+        <div class = "btnstyle">
         {% block content %}
         <!-- The content block is where you'll include the content from other templates -->
         {% endblock %}
+        </div>
     </main>
 
-    <footer class="footer-bar">
-        <!-- Footer goes here -->
+    <footer class="footer-bar bg-dark text-white">
+        <div class="container text-center">
+            <p>&copy; 2024 MetaCollab. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Add your JavaScript files here -->
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
