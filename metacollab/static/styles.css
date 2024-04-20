@@ -58,7 +58,7 @@ main {
   padding: 10px 0;
 }
 
-.btnstyle > :first-child {
+.enable {
   border-radius: 30px;
   background-color: #007bff;
   color: #fff;
@@ -71,11 +71,11 @@ main {
   margin-right: 36px;
 }
 
-.btnstyle > :first-child:hover {
+.enable:hover {
   background-color: #0056b3;
 }
 
-.btnstyle > :nth-child(2) {
+.show {
   /* Styles for the second child <p> element */
   font-size: 16px;
   color: #333; /* Example color */

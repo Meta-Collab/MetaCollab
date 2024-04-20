@@ -9,6 +9,73 @@ Home
 {% endblock %}
 
 {% block content %}
-    <button class="enableEthereumButton">Enable Ethereum</button>
-    <p>Account: <span class="showAccount"></span></p>
+    <div class="d-flex flex-row-reverse justify-content-between">
+        <button class="enableEthereumButton enable">Enable Ethereum</button>
+        <p class="show">Account: <span class="showAccount"></span></p>
+    </div>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="height: 400px;">
+            <img src="../imgs/DATA-PRIVACY-1240x600.jpg" alt="Your Image" width="100%" height="100%">
+            
+          </div>
+          <div class="carousel-item" style="height: 400px;">
+            <img src="../imgs/blog_data-protection-vs-data-privacy_featured-img_730x270_small.jpg" alt="Your Image" width="100%" height="100%">
+            
+          </div>
+          <div class="carousel-item" style="height: 400px;">
+            <img src="../imgs/File-Transfer-Illustration-1024x425.png" alt="Your Image" width="100%" height="100%">
+            
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <main>
+        <h1 class="visually-hidden">Features examples</h1>
+      
+        <div class="container px-4 py-5" id="featured-3">
+          <h2 class="pb-2 border-bottom" style="text-align: center;">DATA PRIVACY</h2>
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+              </div>
+              <h3 class="fs-2 text-body-emphasis">Decentralized Training</h3>
+              <p>Distributing machine learning model training across multiple devices or edge servers without centralizing data, preserving privacy while still benefiting from collective intelligence.</p>
+              
+            </div>
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
+              </div>
+              <h3 class="fs-2 text-body-emphasis">Secure Aggregation</h3>
+              <p>Utilizing cryptographic techniques to aggregate model updates from multiple sources while preserving the privacy of individual contributions.</p>
+              
+            </div>
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+              </div>
+              <h3 class="fs-2 text-body-emphasis">Smart Contracts</h3>
+              <p> Implementing self-executing contracts on blockchain platforms, enabling automated and transparent agreements while maintaining data privacy through cryptographic techniques.</p>
+              
+            </div>
+          </div>
+        </div>
+      
+        
+      </main>
 {% endblock %}

@@ -49,8 +49,8 @@ def api_list_room(request):
 @api_view(['GET', 'POST'])
 def list_rooms(request):
     print("help")
-    user = User.objects.get(id = request.session["user_id"])
-    rooms = RoomToUser.objects.filter(user=user)
+    user = request.user
+    rooms = [Room.objects.get(id=1), Room.objects.get(id=2)]
     print(user)
     if request.method == 'POST':
         #here also make a call to smart contract function
