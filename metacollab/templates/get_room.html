@@ -3,7 +3,7 @@
 {% block content %}
 
 <main class="main">
-<section class="room-name">{{ context.roomname }}</section>
+<section class="room-name">{{ room.name }}</section>
 </main>
 <main class="main">
   
@@ -23,7 +23,7 @@
   </section>
   <section class="user-section">
     <h2 class="user-section__title">Users</h2>
-    {% for user in context.roomusers %}
+    {% for user in members %}
       <div class="user-section__item">
         <div class="user-section__item-icon"></div>
         <div class="user-section__item-details">

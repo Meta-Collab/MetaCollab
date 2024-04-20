@@ -78,7 +78,7 @@ def list_rooms(request):
             print("Error in sending data to Node.js server")
         return redirect('get_room', roomuuid=room.roomuuid, )
         
-    return render(request,"list_rooms.html", {'room': rooms})
+    return render(request,"list_rooms.html", {'rooms': rooms})
 
 @api_view(['GET', 'POST'])
 def home(request):
