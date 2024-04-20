@@ -143,10 +143,10 @@ def process_image(file):
     return test_image
 
 def test_updated_model(model):
-    test_image_hardhat = process_image("datasets/test.jpg")
+    test_image = process_image("datasets/test.jpg")
 
     print("Testing the final model on an image...")
-    image_test_result = model.predict(np.expand_dims(test_image_hardhat, axis=0))
+    image_test_result = model.predict(np.expand_dims(test_image, axis=0))
     print(image_test_result[0])
 
     highest_prediction_score = max(image_test_result[0])
