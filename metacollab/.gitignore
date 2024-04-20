@@ -1,4 +1,5 @@
 .env
+myworld
 myvenv/
 db.sqlite3
 main/__pycache__/

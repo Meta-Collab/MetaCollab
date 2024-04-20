@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the body takes up at least the height of the viewport */
+}
+
+/* Header styles */
+.header {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-button {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+  color: #007bff;
+}
+
+/* Main content styles */
+main {
+  flex: 1; /* Grow to fill remaining space */
+  padding: 20px;
+}
+
+/* Footer styles */
+.footer-bar {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.btnstyle > :first-child {
+  /* Styles for the first child */
+  /* For example, if the first child is a button */
+  border-radius: 30px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease; /* Smooth transition effect */
+}
+
+.btnstyle > :first-child:hover {
+  background-color: #0056b3;
+}
+
+.btnstyle > :nth-child(2) {
+  /* Styles for the second child <p> element */
+  font-size: 16px;
+  color: #333; /* Example color */
+  margin-top: 20px; /* Example margin */
+  margin-left: 15px;
+}
+
+/* Custom styles for MetaCollab */
+body {
+  background: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.btn-success {
+  background: #28a745;
+  border: none;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+footer {
+  background: #e3e3e3;
+  color: #333;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* Hover effect for the second child <p> element */

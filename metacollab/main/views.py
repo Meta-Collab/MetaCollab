@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .decorators import authenticate_room, authenticate_user
+from .decorators import authenticate_room
 from django.contrib.auth import authenticate, login
 from .models import User, Room, RoomToUser
 import uuid
