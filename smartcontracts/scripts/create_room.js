@@ -11,7 +11,7 @@ async function main(room_id, members) {
     console.log("successfully created room")
 }
 
-main(1, ["0xe2BA10C388ef4A013Db4ff13f56B742893208D05"])
+main(1548133828, ["0xe2BA10C388ef4A013Db4ff13f56B742893208D05"])
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error)

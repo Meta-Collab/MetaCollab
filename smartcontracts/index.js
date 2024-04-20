@@ -21,35 +21,49 @@ app.post('/new_room', async (req, res) => {
         console.error(error);
     }
 });
-app.post('/push', (req, res) => {
-    const commit = req.body.commit;
+
+app.post('/get_commits',async (req, res) => {
     const room_id=req.body.room_id;
-    push(commit, room_id);
-    res.send('Success!');
+    console.log(room_id);
+    try {
+        const commits=await get_commits(room_id);
+        res.json({ commits });
+    }catch (error) {
+        console.error(error);
+    }
 });
-app.post('/get_commits', (req, res) => {
-    const room_id=req.body.room_id;
-    commits=get_commits(room_id);
-    API.post('/api/list_rooms', { commits: commits })
-        .then(response => {
-            res.send('Success!');
-        }
-    )
-});
-app.post('/take_file)', async (req, res) => {
-    const room_id = req.body.file_path;
+
+app.post('/take_file', async (req, res) => {
+    const file_path = req.body.file_path;
     try {
         const url = await main(file_path);
-        API.post('/api/get_file_url', { url: url })
-            .then(response => {
-                res.send('Success!');
-            })
-        res.send('Success!');
+        res.json(url);
+        
     } catch (error) {
         console.error(error);
     }
 });
 
+app.post('/put_string', async (req, res) => {
+    const complete_string = req.body.complete_string;
+    const roomuuid=req.body.roomuuid;
+    // try {
+    //     const url = await main(file_path);
+    //     API.post('/api/get_file_url', { url: url })
+    //         .then(response => {
+    //             res.send('Success!');
+    //         })
+    //     res.send('Success!');
+    // } catch (error) {
+    //     console.error(error);
+    // }
+    try {
+        const result = await push(complete_string, roomuuid);
+        res.send('Success!');
+    } catch (error) {
+        console.error(error);
+    }
+});
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });

@@ -10,7 +10,7 @@ async function main(room_id) {
     console.log(commits)
 }
 
-main(1)
+main(1548133828)
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error)
