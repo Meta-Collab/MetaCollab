@@ -1,4 +1,8 @@
 .env
-myvenv
+myworld
+myvenv/
 db.sqlite3
-metacollab/main/__pycache__/
+main/__pycache__/
+metacollab/main/migrations/__pycache__/
+metacollab/metacollab/__pycache__/
+
