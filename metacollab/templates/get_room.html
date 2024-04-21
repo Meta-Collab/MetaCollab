@@ -3,12 +3,13 @@
 {% block content %}
 
 <main class="main">
-<section class="room-name">{{ room.name }}</section>
+<section class="room-name"><span style="font-weight: bold;"> Room Name: </span>{{ room.name }}</section>
 </main>
 <main class="main">
   
   <section class="file-section">
-    <h2 class="file-section__title">Files</h2>
+
+    <h2 class="file-section__title">IPFS Files</h2>
     
     <div class="file-section__item">
       <img
@@ -16,7 +17,7 @@
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/904147ae3c1642bfa7b80e155d175e1addc821e6c11732e3808b62e3c85adf19?"
         class="file-section__item-img"
       />
-      <div class="file-section__item-name">file.pb</div>
+      <div class="file-section__item-name"><a href="{{ room.url }}"> File </a></div>
     </div>
     
     
@@ -27,8 +28,8 @@
       <div class="user-section__item">
         <div class="user-section__item-icon"></div>
         <div class="user-section__item-details">
-          <div class="user-section__item-name">{{ user.username }}</div>
-          <div class="user-section__item-account">MetaMask ID: {{ user.accountNo }}</div>
+          <div class="user-section__item-name"><span style="font-weight: bold;">Username: </span> {{ user.user.username }}</div>
+          <div class="user-section__item-account"><span style="font-weight: bold;"> MetaMask ID: </span> {{ user.user.accountNo }}</div>
         </div>
       </div>
     {% endfor %}
@@ -55,5 +56,5 @@
           <input type="submit" name="action" value="submit">
         </form>
 </main>
-<a href="{% url 'get_commits' roomuuid=room.roomuuid %}">{{ room.name }}</a>
+<a href="{% url 'get_commits' roomuuid=room.roomuuid %}"> Commits </a>
     {% endblock %}
