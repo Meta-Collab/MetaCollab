@@ -19,14 +19,14 @@
             <div class="repo">
                 <div class="repo-title">
                     <h2 style="font-family: 'Courier New', monospace;">
-                        <a href="#">{{ room.name }}</a>
+                        <a href="#">{{ room.room.name }}</a>
                     </h2>
                 </div>
                 <div class="repo-description">
                     <p style="font-family: 'Courier New', monospace;">
-                        <a href="#">{{ room.roomuuid }}</a>
+                        <a href="{% url 'get_room' roomuuid=room.room.roomuuid %}">{{ room.room.roomuuid }}</a>
                     </p>
-                    <p style="font-family: 'Courier New', monospace;">{{ room.description }}</p>
+                    <p style="font-family: 'Courier New', monospace;">{{ room.room.description }}</p>
                 </div>
             </div>
             {% if forloop.counter|divisibleby:3 or forloop.last %}
@@ -34,4 +34,5 @@
     </div>
             {% endif %}
         {% endfor %}
+        
     {% endblock %}

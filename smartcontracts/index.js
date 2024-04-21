@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 const { push, new_room, get_commits }= require('./scripts/interact.js');
-const { main }= require('./scripts/pinata.js');
+const { upload }= require('./scripts/pinata.js');
 
 const API = axios.create({
     baseURL: 'http://localhost:8000',
@@ -26,23 +26,26 @@ app.post('/get_commits',async (req, res) => {
     const room_id=req.body.room_id;
     console.log(room_id);
     try {
-        const commits=await get_commits(room_id);
+        console.log("check",await get_commits(room_id));
         res.json({ commits });
-    }catch (error) {
-        console.error(error);
-    }
-});
-
-app.post('/take_file', async (req, res) => {
-    const file_path = req.body.file_path;
-    try {
-        const url = await main(file_path);
-        res.json(url);
-        
+        //res.send('Success!');
     } catch (error) {
         console.error(error);
     }
 });
+
+app.post('/upload_file', async (req, res) => {
+    const file_path = req.body.file_path;
+    const room_id=req.body.room_id;
+    try {
+        const url = await upload(file_path,room_id);
+        //res.send('Success!');
+        res.json({url});
+    } catch (error) {
+        console.error(error);
+    }
+});
+
 
 app.post('/put_string', async (req, res) => {
     const complete_string = req.body.complete_string;

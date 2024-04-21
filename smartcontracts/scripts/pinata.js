@@ -5,7 +5,7 @@ require('dotenv').config();
 
 key = process.env.PINATA_KEY
 
-async function main(path,room_id) {
+async function upload(path,room_id) {
   try {
     const formData = new FormData();
 
@@ -41,3 +41,5 @@ async function main(path,room_id) {
     console.log(error);
   }
 }
+
+module.exports = { upload }

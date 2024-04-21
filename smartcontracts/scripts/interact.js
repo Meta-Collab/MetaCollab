@@ -37,12 +37,15 @@ async function push(commit, room_id)
 async function get_commits(room_id)
 {
   const command = 'yarn hardhat run scripts/commit.js --network sepolia';
-
+  const commit_history = require('./commit.js');
   // Execute the command
   exec(command, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error executing command: ${error}`);
       return;
+    }
+    else{
+      return commit_history;
     }
     console.log(`stdout: ${stdout}`);
     console.error(`stderr: ${stderr}`);

@@ -44,16 +44,16 @@
         {% empty %}
             <p>No commits in this room.</p>
         {% endfor %} -->
-  <section class="commit-section">
-    <h2 class="commit-section__title">Recent Commits</h2>
-    <div class="commit-section__item">
-      <div class="commit-section__item-icon"></div>
-      <div class="commit-section__item-details">
-        <div class="commit-section__item-message">Commit message goes here</div>
-        <div class="commit-section__item-author">Username - 2 days ago</div>
-      </div>
-    </div>
-  </section>
+        <form method="POST">
+          {% csrf_token %}
+          <input type="submit" name="action" value="train">
+        </form>
+        <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="roomuuid" value="{{ roomuuid }}">
+          <input type="text" id="string" name="string">
+          <input type="submit" name="action" value="submit">
+        </form>
 </main>
-  
+<a href="{% url 'get_commits' roomuuid=room.roomuuid %}">{{ room.name }}</a>
     {% endblock %}

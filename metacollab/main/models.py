@@ -11,6 +11,8 @@ class Room(models.Model):
     roomuuid= models.IntegerField(unique=True)
     name=models.CharField(max_length=255)
     description=models.TextField()
+    cid=models.CharField(max_length=255,default=None, null=True, blank=True)
+    url=models.CharField(max_length=255,default=None, null=True, blank=True)
     def __str__(self):
         return str(self.roomuuid)
 

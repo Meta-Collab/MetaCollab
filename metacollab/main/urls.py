@@ -5,9 +5,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('api/list_rooms',views.api_list_room, name='api_list_rooms'),
-    path('list_rooms',views.list_rooms, name='list_rooms'),
-    path('get_room/<int:roomuuid>', views.get_room, name='get_room'),
+    #path('api/list_rooms',views.api_list_room, name='api_list_rooms'),
+    path('list_rooms/',views.list_rooms, name='list_rooms'),
+    path('get_room/<int:roomuuid>/', views.get_room, name='get_room'),
+    path('get_commits/<int:roomuuid>/', views.get_commits, name='get_commits'),
+    path('update_model/<int:roomuuid>/', views.update_model, name='update_model'),
     #re_path(r'^get_room/(?P<roomuuid>[0-9a-f-]+)/$', views.get_room, name='get_room'),
 ]
 

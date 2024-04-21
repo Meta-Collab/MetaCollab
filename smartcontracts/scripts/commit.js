@@ -7,11 +7,12 @@ async function main(room_id) {
     const storageFactory = await ethers.getContractFactory("Room")
     const contract = await storageFactory.attach(CONTRACT_ADDRESS);
     const commits = await contract.retrieve(room_id)
-    console.log(commits)
+    return commits
 }
 
-main(1548133828)
-  .then(() => process.exit(0))
+commit = main(1548133828)
+  .then(() => 
+  module.exports = commit)
   .catch((error) => {
     console.error(error)
     process.exit(1)
