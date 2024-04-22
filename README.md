@@ -5,7 +5,7 @@
 <a href="https://hack36.com"> <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height=24px> </a>
 
 - ### <a href="https://youtu.be/XTADBtRyZK8">Demo Video </a>
-- ###  <a href=""> PPT link </a>
+- ###  <a href="https://docs.google.com/presentation/d/1xnV0S1DYB7M-MCk9P0KP_HKoeN-4uKUMm_g0N1yy62c/edit?usp=sharing"> PPT link </a>
 
 ## Introduction:
   Tracking users' daily activities on their smartphones and other devices, often shared with companies, raises serious concerns about data privacy. Such practices compromise users' privacy and put their data at risk of misuse and unauthorized access, including being sold to third-party apps. For instance, ubiquitous features like keyboard word prediction and fitness activity tracking, designed to enhance user experience, inadvertently become conduits for extensive data collection, leaving users vulnerable to exploitation.
@@ -40,10 +40,10 @@ Rather than directly sharing data across devices to train a model for generating
   
 ## Contributors:
 
-Team Name: MetaCollab
+Team Name: AIOverlords
 
 * [Eleena Sarah Mathew](https://github.com/eleensmathew/)
-* [Nandika Agarwal](https://github.com/Nandika-A)
+* [Nandika Agrawal](https://github.com/Nandika-A)
 * [Manan Arora](https://github.com/Manan-Arora31)
 * [Ritesh Kumar Maurya](https://github.com/MauryaRitesh)
 
